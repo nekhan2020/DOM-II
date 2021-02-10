@@ -82,13 +82,13 @@ image[1].addEventListener("click", () => {
 image[2].addEventListener("click", () => {
   image[2].setAttribute(
     "src",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/1200px-Alabama_in_United_States.svg.png"
+    "https://www.tvovermind.com/wp-content/uploads/2017/12/Cameo-Dodgeball.jpg"
   );
 });
 image[3].addEventListener("click", () => {
   image[3].setAttribute(
     "src",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/1200px-Alabama_in_United_States.svg.png"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJiIYYM8KuiWkiai8UolvXvoN7A1UF5cmboA&usqp=CAU"
   );
 });
 
