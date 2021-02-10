@@ -7,6 +7,9 @@ const heading = document.querySelector(".logo-heading");
 const image = document.querySelectorAll("img");
 const nav = document.querySelectorAll("nav a");
 const bodySel = document.querySelector("body");
+const footSel = document.querySelector("footer p");
+const contentPick = document.querySelector(".destination");
+const contentBtn = document.querySelector(".btn");
 
 //! ------------mousemove---------------- //
 image[0].addEventListener("mousemove", title);
@@ -36,6 +39,11 @@ for (let i = 0; i < nav.length; i++) {
   nav[i].addEventListener("mouseout", function () {
     nav[i].style.color = "black";
     nav[i].style.fontSize = "1.5rem";
+  });
+}
+for (let i = 0; i < nav.length; i++) {
+  nav[i].addEventListener("click", function (event) {
+    event.preventDefault();
   });
 }
 
@@ -71,7 +79,7 @@ document.addEventListener("scroll", () => {
   image[0].setAttribute("src", "https://bit.ly/3q85wkT");
 });
 
-//! --------focus---------- //
+//! --------click---------- //
 
 image[1].addEventListener("click", () => {
   image[1].setAttribute(
@@ -92,7 +100,40 @@ image[3].addEventListener("click", () => {
   );
 });
 
-// TODO this function wasnt working.. I couldnt get every a tag in the nav bar to work //
+//! --------footer color change---------- //
+// footer.addEventListener("mousemove", (event) => footer.style.backgroundColor = "rgb("+event.offsetX+", "+event.offsetY+", 70)"
+
+let footerP2 = document.createElement("p");
+footerP2.textContent = "2nd copyright";
+footerP2.style.color = "red";
+document.querySelector("footer").appendChild(footerP2);
+
+let footerP3 = document.createElement("p");
+footerP3.textContent = "3rd copyright";
+footerP3.style.color = "red";
+document.querySelector("footer").appendChild(footerP3);
+
+footSel.addEventListener(
+  "mousemove",
+  (e) =>
+    (footSel.style.backgroundColor =
+      "rgb(" + e.offsetX + ", " + e.offsetY + ", 100)")
+);
+
+//! --------propagation---------- //
+contentPick.addEventListener(
+  "click",
+  () => (contentPick.style.backgroundColor = "red")
+);
+
+contentBtn.addEventListener(
+  "click",
+  (event) => (
+    (contentBtn.style.backgroundColor = "green"), event.stopPropagation()
+  )
+);
+
+// TODO this function wasnt working.. I couldnt get every a tag in the nav bar to work
 
 // function navBackground() {
 // }
@@ -100,6 +141,4 @@ image[3].addEventListener("click", () => {
 // document.querySelectorAll("nav a").forEach((a) => (a.style.color = "red")
 
 // .querySelectorAll("a")
-//   .forEach((aColor) => (aColor.style.color = "#60b347"));
-
-// TODO ----------------------------------------------
+//   .forEach((aColor) => (aColor.style.color = "#60b347"))
